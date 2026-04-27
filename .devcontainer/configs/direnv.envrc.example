@@ -1,0 +1,3 @@
+# Example .envrc for direnv Python automation
+# Copy to your project root as .envrc and allow with: direnv allow
+layout python

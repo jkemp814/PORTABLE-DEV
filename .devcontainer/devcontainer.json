@@ -1,0 +1,64 @@
+{
+  "name": "Fedora Portable Devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        // --- Languages ---
+        "ms-vscode.makefile-tools",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools-extension-pack",
+        "rust-lang.rust-analyzer",
+        "serayuzgur.crates",
+        "tamasfe.even-better-toml",
+        "ms-dotnettools.csharp",
+        "redhat.java",
+        "vscjava.vscode-java-pack",
+        "ms-vscode.powershell",
+        // --- Linters / Formatters ---
+        "timonwong.shellcheck",
+        "foxundermoon.shell-format",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "streetsidesoftware.code-spell-checker",
+        "redhat.vscode-yaml",
+        "redhat.ansible",
+        // --- Debuggers / Utilities ---
+        "ms-vscode.node-debug2",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker",
+        // --- Jupyter Enhancements ---
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        // --- Remote / Containers ---
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode-remote.remote-wsl",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        // --- TypeScript / Node ---
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "ms-vscode.vscode-node-azure-pack",
+        // --- Collaboration / GitHub ---
+        "ms-vsliveshare.vsliveshare",
+        "github.vscode-pull-request-github",
+        "GitHub.copilot"
+      ]
+    }
+  },
+  "runArgs": [],
+  "remoteUser": "vscode",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace",
+  "overrideCommand": false
+}
