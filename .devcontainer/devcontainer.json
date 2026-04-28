@@ -1,15 +1,12 @@
 {
-  "name": "Fedora Rust Devcontainer",
+  "name": "Fedora Rust Devcontainer (Minimal)",
   "build": {
     "dockerfile": "Dockerfile"
   },
   "customizations": {
     "vscode": {
       "extensions": [
-        "rust-lang.rust-analyzer",
-        "serayuzgur.crates",
-        "tamasfe.even-better-toml",
-        "streetsidesoftware.code-spell-checker"
+        "rust-lang.rust-analyzer"
       ]
     }
   },
