@@ -1,0 +1,11 @@
+timonwong.shellcheck
+rust-lang.rust-analyzer
+serayuzgur.crates
+tamasfe.even-better-toml
+streetsidesoftware.code-spell-checker
+ms-vsliveshare.vsliveshare
+eamodio.gitlens
+github.vscode-pull-request-github
+GitHub.copilot
+# Bash LSP (Language Server Protocol)
+mads-hartmann.bash-ide-vscode
