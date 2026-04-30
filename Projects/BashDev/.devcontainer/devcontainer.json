@@ -1,0 +1,17 @@
+{
+  "name": "Bash Dev",
+  "build": { "dockerfile": "Dockerfile" },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "foxundermoon.shell-format",
+        "rogalmic.bash-debug",
+        "timonwong.shellcheck",
+        "mads-hartmann.bash-ide-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "davidanson.vscode-markdownlint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
