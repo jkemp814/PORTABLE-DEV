@@ -1,0 +1,11 @@
+ffmpeg -f v4l2 -framerate 30 -video_size 1920x1080 -i /dev/video0 -f nut - | ffplay -fflags nobuffer -flags low_delay -framedrop -i -
+
+ffplay -f v4l2 -framerate 30 -video_size 1920x1080 /dev/video0
+
+ffplay -f v4l2 -input_format mjpeg -framerate 30 -video_size 1920x1080 -i /dev/video0
+
+ffmpeg -f v4l2 -input_format mjpeg -framerate 30 -video_size 1920x1080 -i /dev/video0 -f nut - | ffplay -fflags nobuffer -flags low_delay -framedrop -i -
+
+ffmpeg -f v4l2 -list_formats all -i /dev/video0
+
+ffmpeg -f v4l2 -input_format mjpeg -framerate 30 -video_size 1920x1080 -i /dev/video0 -c:v copy -f nut - | ffplay -fflags nobuffer -flags low_delay -framedrop -i -
