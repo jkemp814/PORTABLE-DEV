@@ -1,3 +1,4 @@
+Toolchest/Fonts/
 # Ignore Python virtual environments and caches
 **/.venv/
 **/__pycache__/
@@ -39,8 +40,12 @@ projects/*/__pycache__/
 htmlcov/
 .coverage
 
+# Ignore all development environments and devcontainers
+Environments/
+
 # Ignore VS Code Portable Linux
 VSCodePortable-Linux/
+VSCodePortable-Windows/
 coverage.xml
 
 # Ignore temporary files
@@ -53,6 +58,13 @@ coverage.xml
 *.tmp
 
 # Ignore system files
+.uuid
 Thumbs.db
+.Trash-1000
 Desktop.ini
+.goutputstream-*
 System Volume Information
+
+# Ignore PortableApps
+PortableApps
+PortableGit
