@@ -9,7 +9,7 @@ A cross-platform portable development environment supporting both **Linux and Wi
 - **Reference Library**: Technical manuals, programming language guides, and code references via calibrePortable
 - **Development Environments**: Pre-configured setups for Python, Rust, C++, Bash, and full development stacks
 - **Portable Git**: Self-contained Git installation
-- **Portable VS Code**: Linux and Windows versions included
+- **Portable VS Code**: Bundled Linux and Windows portable builds in this project
 - **Dev Containers**: Podman/Docker/container support for isolated development
 - **Projects Folder**: Centralized workspace for your code repositories
 
@@ -47,12 +47,14 @@ PORTABLE-DEV/
 
 ## Getting Started
 
+Use the bundled portable VS Code builds in this repository for the most consistent behavior across hosts.
+
 ### Using on Linux
 
-1. Open the workspace file in VS Code:
+1. Open the workspace with the Linux portable VS Code build included in this project:
 
    ```bash
-   code PORTABLE-DEV.code-workspace
+   ./VSCodePortable-Linux/bin/code PORTABLE-DEV.code-workspace
    ```
 
 2. Use the environment-specific setups in `Environments/`
@@ -94,7 +96,10 @@ PORTABLE-DEV/
 
 ## References
 
-- **VS Code Downloads (official)**: [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+- **VS Code Portable (Linux, in this project)**: [VSCodePortable-Linux](VSCodePortable-Linux)
+- **VS Code Portable (Windows, in this project)**: [VSCodePortable-Windows](VSCodePortable-Windows)
+- **VS Code Downloads (official source for updating bundled builds)**: [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+- **VS Code Portable Mode (official docs)**: [https://code.visualstudio.com/docs/editor/portable](https://code.visualstudio.com/docs/editor/portable)
 - **VS Code Dev Containers (official docs)**: [https://code.visualstudio.com/docs/devcontainers/containers](https://code.visualstudio.com/docs/devcontainers/containers)
 - **Microsoft Dev Container samples**: [https://github.com/devcontainers/images/tree/main/src](https://github.com/devcontainers/images/tree/main/src)
 - **PortableApps Platform**: [https://portableapps.com/download](https://portableapps.com/download)
