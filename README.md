@@ -15,7 +15,7 @@ A cross-platform portable development environment supporting both **Linux and Wi
 
 ## Folder Structure
 
-```
+```text
 PORTABLE-DEV/
 ├── Documents/               # Personal documents
 ├── Environments/            # Dev environment configurations
@@ -50,9 +50,11 @@ PORTABLE-DEV/
 ### Using on Linux
 
 1. Open the workspace file in VS Code:
+
    ```bash
    code PORTABLE-DEV.code-workspace
    ```
+
 2. Use the environment-specific setups in `Environments/`
 3. Add your projects to the `Projects/` folder
 4. Use Portable Git located in `PortableGit/bin/git`
@@ -60,9 +62,11 @@ PORTABLE-DEV/
 ### Using on Windows
 
 1. Open the workspace file in VS Code Portable (Windows):
+
    ```bash
    VSCodePortable-Windows/bin/Code.exe PORTABLE-DEV.code-workspace
    ```
+
 2. Use Portable Git for version control
 3. Add your projects to the `Projects/` folder
 
