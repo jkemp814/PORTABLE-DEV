@@ -83,6 +83,25 @@ PORTABLE-DEV/
 - **Portable Apps**: Install additional portable applications in the `PortableApps/` folder
 - **Scripts**: Add helper scripts to `Toolchest/` for common tasks
 
+## How This Setup Was Built
+
+1. Prepare a portable drive layout and keep all tools/data at the drive root.
+2. Install or extract cross-platform tools (VS Code, Git, and portable apps) into dedicated folders.
+3. Create reusable development environments under `Environments/`.
+4. Keep project repositories under `Projects/`.
+5. Use Dev Containers for isolated toolchains, and mount `Projects/` from the host into the container.
+6. Track infrastructure and documentation changes in git.
+
+## References
+
+- **VS Code Downloads (official)**: [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+- **VS Code Dev Containers (official docs)**: [https://code.visualstudio.com/docs/devcontainers/containers](https://code.visualstudio.com/docs/devcontainers/containers)
+- **Microsoft Dev Container samples**: [https://github.com/devcontainers/images/tree/main/src](https://github.com/devcontainers/images/tree/main/src)
+- **PortableApps Platform**: [https://portableapps.com/download](https://portableapps.com/download)
+- **PortableApps App Directory**: [https://portableapps.com/apps](https://portableapps.com/apps)
+- **Git for Windows Downloads**: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+- **PortableGit Releases (Git for Windows)**: [https://github.com/git-for-windows/git/releases](https://github.com/git-for-windows/git/releases)
+
 ## Tips
 
 - **Mount External Drives**: Use `devcontainer.json` mounts to access Projects folder from inside containers
@@ -94,4 +113,4 @@ PORTABLE-DEV/
 
 ## License
 
-MIT (or your preferred license)
+Licensed under the MIT License. See [LICENSE](LICENSE).
