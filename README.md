@@ -6,6 +6,7 @@ A cross-platform portable development environment supporting both **Linux and Wi
 
 - **Cross-Platform Support**: Runs on Linux and Windows from portable storage
 - **Portable Applications**: PortableFirefox, PortableChromium, KeePass, Calibre, and more included
+- **Reference Library**: Technical manuals, programming language guides, and code references via calibrePortable
 - **Development Environments**: Pre-configured setups for Python, Rust, C++, Bash, and full development stacks
 - **Portable Git**: Self-contained Git installation
 - **Portable VS Code**: Linux and Windows versions included
@@ -27,7 +28,7 @@ PORTABLE-DEV/
 ├── PortableApps/            # Self-contained applications
 │   ├── FirefoxPortable/
 │   ├── KeePassXCPortable/
-│   ├── calibrePortable/
+│   ├── calibrePortable/      # Technical manuals, programming language guides, and code references
 │   └── ClamWinPortable/
 ├── PortableGit/             # Self-contained Git installation
 ├── Toolchest/               # Scripts and utilities
