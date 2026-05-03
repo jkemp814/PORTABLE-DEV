@@ -10,7 +10,7 @@ A cross-platform portable development environment supporting both **Linux and Wi
 - **Development Environments**: Pre-configured setups for Python, Rust, C++, Bash, and full development stacks
 - **Portable Git**: Self-contained Git installation
 - **Portable VS Code**: Linux and Windows versions included
-- **Dev Containers**: Docker/container support for isolated development
+- **Dev Containers**: Podman/Docker/container support for isolated development
 - **Projects Folder**: Centralized workspace for your code repositories
 
 ## Folder Structure
