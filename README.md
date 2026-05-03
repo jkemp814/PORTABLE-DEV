@@ -28,7 +28,7 @@ PORTABLE-DEV/
 ├── PortableApps/            # Self-contained applications
 │   ├── FirefoxPortable/
 │   ├── KeePassXCPortable/
-│   ├── calibrePortable/      # Technical manuals, programming language guides, and code references
+│   ├── calibrePortable/     # Technical manuals, programming language guides, and code references
 │   └── ClamWinPortable/
 ├── PortableGit/             # Self-contained Git installation
 ├── Toolchest/               # Scripts and utilities
