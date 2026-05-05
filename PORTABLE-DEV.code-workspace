@@ -5,7 +5,7 @@
     },
   ],
   "settings": {
-    "editor.fontFamily": "'CaskaydiaCove NF', 'Caskaydia Cove Nerd Font', Consolas, 'Cascadia Code', 'DejaVu Sans Mono', 'Liberation Mono', monospace",
-    "terminal.integrated.fontFamily": "'CaskaydiaCove NF Mono', 'Caskaydia Cove Nerd Font Mono', 'CaskaydiaCove NF', 'Caskaydia Cove Nerd Font', Consolas, 'Cascadia Mono', 'DejaVu Sans Mono', 'Liberation Mono', monospace",
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font', Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace",
+    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font', 'CaskaydiaCove Nerd Font Mono', Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace",
   },
 }
