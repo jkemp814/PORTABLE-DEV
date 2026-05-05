@@ -1,0 +1,132 @@
+---
+
+## 1. Keep the Container Images on‑the‑Flash
+
+You mentioned images aren’t stored on the drive, and that’s fine for first‑time use. If you hit a host with no internet it’ll
+ fail.  
+**Solution**: ship a small, read‑only container archive (tarball) per language and load it on demand.
+
+```bash
+# /portable/containers/bash.tar   (docker image for a “bash” josh)
+# /portable/containers/python.tar
+# /portable/containers/rust.tar
+# /portable/containers/c++.tar
+```
+
+**Loader helper (bash / Windows‑Git‑Bash)**
+
+```bash
+# load_img.sh
+IMG=$1     # e.g. "rust"
+ARCHIVE="$ROOT/containers/${IMG}.tar"
+
+if ! docker images | grep -q "^${IMG}:"; then
+  echo "Loading $IMG image from flash…"
+  docker load -i "$ARCHIVE"
+  docker tag "$(docker images | tail -n1 | awk '{print $3}')" "myrepo/${IMG}:latest"
+fi
+```
+
+You can call this from your launch wrapper *before* you fire up the dev‑container.
+
+> **Tip**: If you’re on Linux you can use **Podman** instead of Docker (or even buildah to build OCI images directly on the
+ flash).
+
+---
+
+## 2. One‑Click ROC (Run‑Once‑Connect) Launcher
+
+You’re already opening the code binary from the launch folder. Let’s add a couple of niceties:
+
+* Detect the OS
+* Pick the right code-*.exe / code-linux
+* Set VSCODE_PORTABLE_ROOT
+* Point --folder-uri to the current git root (or a projects/ subfolder)
+
+```bash
+# portable-launch.sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+OS="$(uname -s | tr '[:upper:]' '[:lower:]')"
+
+# Windows (Git Bash)
+if [[ "$OS" == *mingw* ]]; then
+  CODE_BIN="code.exe"
+else
+  CODE_BIN="code-linux"
+fi
+
+# Jump to the project folder (if launched from a sub‑dir)
+PROJECT="$(git rev-parse --show-toplevel 2>/dev/null || echo "$ROOT")"
+
+# Optional: load the relevant container image first
+# ./load_img.sh python   # e.g. for a python project
+
+# Start VS Code in portable mode
+"$ROOT/$CODE_BIN" \
+  --user-data-dir="$ROOT"/data \
+  --extensions-dir="$ROOT"/extensions \
+  --folder-uri="file://$PROJECT" \
+  "$@"
+```
+
+Now you can open *any* folder by ./portable-launch.sh . and everything—including extensions—stays in the data/ and 
+extensions/ directories.
+
+---
+
+## 3. Dev‑Container Config: devcontainer.json 🎯
+
+Make the dev‑container definition **media‑agnostic**:
+
+```json
+{
+  "name": "Portable Dev",
+  "dockerFile": "./containers/Dockerfile",
+  "context": "..",
+
+  // Pick the right image based on the project folder name
+  // (we’ll inject a *build‑arg* from the launch script)
+  "runArgs": [
+    "--pull=never",
+    "-e", "DEV_LANG=${DEV_LANG}"
+  ],
+  // Use the same `data` folder for settings
+  "extensions": [
+    "ms-python.python",
+    "ms-vscode.cpptools",
+    "rust-lang.rust"
+  ],
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "settings": {
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe",
+    "terminal.integrated.shell.linux": "/bin/bash"
+  }
+}
+```
+
+**Launch‑time trick**: export DEV_LANG from your wrapper before code is launched.
+
+```bash
+export DEV_LANG=python
+./portable-launch.sh .
+```
+
+VS Code will resolve the image (devcontainers reading the DEV_LANG arg) and use exactly the image you shipped earlier.
+
+---
+
+## 4. GitHub Codespaces: Offline‑First
+
+You’re already using codespaces for the “no‑Docker” hosts, which is fantastic.  
+To keep the process frictionless:
+
+1. Add the following to your repository’s devcontainer.json **outside** your flash‑drive base:
+
+```json
+"runArgs": [
+  "--mount", "type=bind,src=$HOME/.ssh,target=/root/.ssh",
+  "--remote

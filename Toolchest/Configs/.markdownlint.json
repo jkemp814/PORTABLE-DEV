@@ -1,0 +1,4 @@
+{
+	"MD013": false, // Disable line length rule
+	"MD034": true // Enforce link text (no bare URLs)
+}

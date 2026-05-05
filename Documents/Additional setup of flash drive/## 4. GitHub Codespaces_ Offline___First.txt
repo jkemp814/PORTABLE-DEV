@@ -1,0 +1,11 @@
+## 4. GitHub Codespaces: Offline‑First
+
+You’re already using codespaces for the “no‑Docker” hosts, which is fantastic.  
+To keep the process frictionless:
+
+1. Add the following to your repository’s devcontainer.json **outside** your flash‑drive base:
+
+```json
+"runArgs": [
+  "--mount", "type=bind,src=$HOME/.ssh,target=/root/.ssh",
+  "--remote

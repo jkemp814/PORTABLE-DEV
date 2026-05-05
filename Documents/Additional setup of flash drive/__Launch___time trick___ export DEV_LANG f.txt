@@ -1,0 +1,5 @@
+**Launch‑time trick**: export DEV_LANG from your wrapper before code is launched.
+
+```bash
+export DEV_LANG=python
+./portable-launch.sh .

@@ -1,0 +1,24 @@
+## 1. Keep the Container Images on‑the‑Flash
+
+You mentioned images aren’t stored on the drive, and that’s fine for first‑time use. If you hit a host with no internet it’ll
+ fail.  
+**Solution**: ship a small, read‑only container archive (tarball) per language and load it on demand.
+
+# /portable/containers/bash.tar   (docker image for a “bash” josh)
+# /portable/containers/python.tar
+# /portable/containers/rust.tar
+# /portable/containers/c++.tar
+```
+
+**Loader helper (bash / Windows‑Git‑Bash)**
+
+```bash
+# load_img.sh
+IMG=$1     # e.g. "rust"
+ARCHIVE="$ROOT/containers/${IMG}.tar"
+
+if ! docker images | grep -q "^${IMG}:"; then
+  echo "Loading $IMG image from flash…"
+  docker load -i "$ARCHIVE"
+  docker tag "$(docker images | tail -n1 | awk '{print $3}')" "myrepo/${IMG}:latest"
+fi

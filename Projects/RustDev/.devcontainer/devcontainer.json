@@ -1,6 +1,0 @@
-{
-  "name": "Rust Dev",
-  "build": { "dockerfile": "Dockerfile" },
-  "settings": {},
-  "extensions": ["rust-lang.rust-analyzer"]
-}

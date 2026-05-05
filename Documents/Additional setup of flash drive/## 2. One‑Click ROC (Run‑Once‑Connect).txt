@@ -1,0 +1,36 @@
+## 2. One‑Click ROC (Run‑Once‑Connect) Launcher
+
+You’re already opening the code binary from the launch folder. Let’s add a couple of niceties:
+
+* Detect the OS
+* Pick the right code-*.exe / code-linux
+* Set VSCODE_PORTABLE_ROOT
+* Point --folder-uri to the current git root (or a projects/ subfolder)
+
+```bash
+# portable-launch.sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+OS="$(uname -s | tr '[:upper:]' '[:lower:]')"
+
+# Windows (Git Bash)
+if [[ "$OS" == *mingw* ]]; then
+  CODE_BIN="code.exe"
+else
+  CODE_BIN="code-linux"
+fi
+
+# Jump to the project folder (if launched from a sub‑dir)
+PROJECT="$(git rev-parse --show-toplevel 2>/dev/null || echo "$ROOT")"
+
+# Optional: load the relevant container image first
+# ./load_img.sh python   # e.g. for a python project
+
+# Start VS Code in portable mode
+"$ROOT/$CODE_BIN" \
+  --user-data-dir="$ROOT"/data \
+  --extensions-dir="$ROOT"/extensions \
+  --folder-uri="file://$PROJECT" \
+  "$@"

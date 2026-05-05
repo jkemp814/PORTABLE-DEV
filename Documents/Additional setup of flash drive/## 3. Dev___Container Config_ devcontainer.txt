@@ -1,0 +1,28 @@
+## 3. Dev‑Container Config: devcontainer.json 🎯
+
+Make the dev‑container definition **media‑agnostic**:
+
+{
+  "name": "Portable Dev",
+  "dockerFile": "./containers/Dockerfile",
+  "context": "..",
+
+  // Pick the right image based on the project folder name
+  // (we’ll inject a *build‑arg* from the launch script)
+  "runArgs": [
+    "--pull=never",
+    "-e", "DEV_LANG=${DEV_LANG}"
+  ],
+  // Use the same `data` folder for settings
+  "extensions": [
+    "ms-python.python",
+    "ms-vscode.cpptools",
+    "rust-lang.rust"
+  ],
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "settings": {
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe",
+    "terminal.integrated.shell.linux": "/bin/bash"
+  }
+}
