@@ -46,6 +46,7 @@ Environments/
 VSCodePortable-Linux/
 VSCodePortable-Windows/
 Toolchest/Fonts/
+Temp/
 coverage.xml
 
 # Ignore temporary files
