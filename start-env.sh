@@ -28,17 +28,15 @@ if [[ -x "$PORTABLE_PODMAN/bin/podman" ]]; then
 
 	export PODMAN_USERNS="keep-id"
 	export CONTAINERS_STORAGE_CONF="$PORTABLE_PODMAN/config/storage.conf"
-	mkdir -p "$PORTABLE_PODMAN/config" "$PORTABLE_PODMAN/storage"
+	export CONTAINERS_REGISTRIES_CONF="$PORTABLE_PODMAN/config/registries.conf"
+	export CONTAINERS_CONTAINERS_CONF="$PORTABLE_PODMAN/config/containers.conf"
 
-	cat >"$CONTAINERS_STORAGE_CONF" <<-STORAGECONF
-		[storage]
-		driver = "overlay"
-		runroot = "$PORTABLE_PODMAN/storage/runroot"
-		graphroot = "$PORTABLE_PODMAN/storage/graph"
+	mkdir -p "$PORTABLE_PODMAN/storage/runroot" "$PORTABLE_PODMAN/storage/graph"
 
-		[storage.options.overlay]
-		mount_program = "$PORTABLE_PODMAN/bin/fuse-overlayfs"
-	STORAGECONF
+	if grep -q "__PORTABLE_DEV__" "$CONTAINERS_STORAGE_CONF" 2>/dev/null; then
+		sed -i "s|__PORTABLE_DEV__|$SCRIPT_DIR|g" "$CONTAINERS_STORAGE_CONF"
+		info "Storage config paths rewritten for current mount."
+	fi
 
 	export PATH="$PORTABLE_PODMAN/bin:$PATH"
 	info "PortablePodman ready. Container layers stored on drive."
