@@ -1,4 +1,4 @@
-FROM docker.io/library/fedora:43
+FROM docker.io/library/fedora:44
 
 # Install git before running scripts that require it
 RUN dnf -y upgrade --refresh --best --allowerasing && dnf -y install git && dnf clean all
