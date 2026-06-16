@@ -69,3 +69,9 @@ System Volume Information
 # Ignore PortableApps
 PortableApps
 PortableGit
+
+# Ignore PortablePodman runtime contents (keep structure via .gitkeep)
+PortablePodman/storage/*
+PortablePodman/config/*
+!PortablePodman/storage/.gitkeep
+!PortablePodman/config/.gitkeep

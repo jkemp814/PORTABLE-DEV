@@ -1,0 +1,43 @@
+{
+  "name": "PORTABLE-DEV (Full Environment)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/Projects,target=/Projects,type=bind",
+    "source=${localEnv:HOME}/Scripts,target=/Scripts,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "streetsidesoftware.code-spell-checker",
+        "davidanson.vscode-markdownlint",
+        "rogalmic.bash-debug",
+        "mads-hartmann.bash-ide-vscode",
+        "vadimcn.vscode-lldb",
+        "timonwong.shellcheck",
+        "foxundermoon.shell-format",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.pylint",
+        "ms-python.black-formatter",
+        "ms-dotnettools.csharp",
+        "csharpier.csharpier-vscode",
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-vsliveshare.vsliveshare",
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github",
+        "GitHub.copilot",
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "sumneko.lua",
+        "ms-vscode.makefile-tools"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
