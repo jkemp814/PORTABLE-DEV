@@ -4,8 +4,8 @@
     "dockerfile": "Dockerfile"
   },
   "mounts": [
-    "source=${localEnv:HOME}/Projects,target=/Projects,type=bind",
-    "source=${localEnv:HOME}/Scripts,target=/Scripts,type=bind"
+    "source=${localWorkspaceFolder}/Projects,target=/Projects,type=bind",
+    "source=${localWorkspaceFolder}/Scripts,target=/Scripts,type=bind"
   ],
   "customizations": {
     "vscode": {
