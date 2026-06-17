@@ -39,8 +39,7 @@ projects/*/__pycache__/
 htmlcov/
 .coverage
 
-# Ignore all development environments and devcontainers
-Environments/
+# Environments subdirectories each have their own .gitignore
 
 # Ignore VS Code Portable Linux
 VSCodePortable-Linux/

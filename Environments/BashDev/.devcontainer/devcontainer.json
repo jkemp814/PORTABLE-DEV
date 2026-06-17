@@ -1,0 +1,37 @@
+{
+  "name": "Fedora Bash Dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/Projects,target=/Projects,type=bind",
+    "source=${localWorkspaceFolder}/Scripts,target=/Scripts,type=bind",
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "remoteEnv": {
+    "DOCKER_HOST": "unix:///var/run/docker.sock"
+  },
+  "postCreateCommand": "shellcheck --version && shfmt --version",
+  "postStartCommand": "sudo chmod 666 /var/run/docker.sock || true",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.associations": {
+          "*.sh": "shellscript"
+        },
+        "editor.formatOnSave": true,
+        "[shellscript]": {
+          "editor.defaultFormatter": "foxundermoon.shell-format"
+        },
+        "cSpell.words": ["foxundermoon"]
+      },
+      "extensions": [
+        "timonwong.shellcheck",
+        "foxundermoon.shell-format",
+        "rogalmic.bash-debug"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}

@@ -1,0 +1,52 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# Ignore node modules
+node_modules/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore devcontainer build artifacts
+.devcontainer/bashdb/
+.devcontainer/bashdb-*
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore Docker and container files
+*.pid
+*.sock
+
+# Ignore archives
+*.tar
+*.gz
+*.zip
+*.7z
+
+# Ignore large downloads or binaries
+*.bin
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore user-specific files
+*.swp
+*.swo
+*~
+
+# Ignore bashdb source/build if present
+/tmp/bashdb/
+
+# Add more patterns as needed
