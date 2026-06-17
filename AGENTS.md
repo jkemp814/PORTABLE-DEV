@@ -17,9 +17,8 @@ Purpose: Help coding agents become productive quickly in this repo.
 | `start-env.sh`                                | Linux launcher -- detects mount, configures PortablePodman, opens VS Code           |
 | `start-env.bat`                               | Windows launcher (WSL-based)                                                        |
 | `PortablePodman/config/storage.conf`          | Container storage paths (uses `__PORTABLE_DEV__` placeholder, rewritten at runtime) |
-| `.devcontainer/devcontainer.json`             | Root devcontainer -- mounts Projects/ and Scripts/ relative to drive                |
-| `.devcontainer/Dockerfile`                    | Fedora 44 base with multi-language dev tools                                        |
-| `Environments/`                               | Per-language devcontainer configs (Python, Rust, C++, Bash, Full)                   |
+| `Environments/FullDevelopmentEnv/`            | Full devcontainer with multi-language tools, mount binds, and linter configs        |
+| `Environments/`                               | Per-language devcontainer configs (Python, Rust, C++, Bash)                         |
 | `Toolchest/download_portablepodman.sh`        | Downloads static podman + deps into PortablePodman/bin/                             |
 | `Toolchest/setup_vscode_portable_linux.sh`    | Downloads/extracts VS Code Portable for Linux                                       |
 | `Toolchest/setup_vscode_portable_windows.bat` | Downloads/extracts VS Code Portable for Windows                                     |

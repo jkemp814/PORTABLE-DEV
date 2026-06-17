@@ -31,9 +31,6 @@
 
 ```text
 PORTABLE-DEV/
-├── .devcontainer/               # Root devcontainer config (FullDevelopmentEnv)
-│   ├── devcontainer.json
-│   └── Dockerfile
 ├── Documents/                   # Personal documents
 ├── Environments/                # Dev env configurations per language
 │   ├── BashDev/
@@ -128,16 +125,15 @@ Use `PortableGit` for version control.
 
 ### Dev Containers (Isolated Environments)
 
-1. Configure environments in `Environments/`.
-2. Use or edit `.devcontainer/devcontainer.json`.
-3. In VS Code, run "Reopen in Container".
+1. Navigate to the environment in `Environments/` (e.g. `Environments/PythonDev/`).
+2. Open that folder in VS Code and run "Reopen in Container".
 
 ---
 
 ## Customization
 
 - **Environments:** Tweak configs per language/stack in `Environments/`.
-- **Dev Containers:** Update `.devcontainer/devcontainer.json` as needed.
+- **Dev Containers:** Update the devcontainer config under the relevant `Environments/*/.devcontainer/`.
 - **Portable Apps:** Add more apps to `PortableApps/`.
 - **Scripts:** Helper scripts go in `Scripts/` or `Toolchest/`.
 
