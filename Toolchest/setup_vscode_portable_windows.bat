@@ -22,6 +22,16 @@ echo Extracting VS Code...
 
 if not exist "%VSCODE_DATA%" mkdir "%VSCODE_DATA%"
 
+REM Copy seed User configs (settings, keybindings, extensions list)
+set SEED_USER_DIR=%ROOT_DIR%Toolchest\VSCode\User
+set TARGET_USER_DIR=%VSCODE_DIR%\data\user-data\User
+if exist "%SEED_USER_DIR%" (
+	if not exist "%TARGET_USER_DIR%" mkdir "%TARGET_USER_DIR%"
+	copy "%SEED_USER_DIR%\*.json" "%TARGET_USER_DIR%\" >nul 2>nul
+	copy "%SEED_USER_DIR%\*.txt" "%TARGET_USER_DIR%\" >nul 2>nul
+	echo User configs seeded from Toolchest/VSCode/User
+)
+
 del "%VSCODE_ZIP%"
 
 echo VS Code Portable setup complete!

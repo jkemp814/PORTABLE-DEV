@@ -1,0 +1,268 @@
+{
+	"window.zoomLevel": 0.5,
+	"editor.fontSize": 13,
+	"editor.indentSize": "tabSize",
+	"terminal.integrated.defaultProfile.linux": "pwsh",
+	"terminal.integrated.profiles.linux": {
+		"bash": {
+			"path": "host-spawn",
+			"icon": "terminal-bash",
+			"args": ["bash"]
+		},
+		"zsh": {
+			"path": "zsh"
+		},
+		"fish": {
+			"path": "fish"
+		},
+		"tmux": {
+			"path": "tmux",
+			"icon": "terminal-tmux"
+		},
+		"pwsh": {
+			"path": "pwsh",
+			"icon": "terminal-powershell"
+		},
+		"bash (2)": {
+			"path": "/usr/bin/bash"
+		}
+	},
+	"terminal.integrated.defaultProfile.windows": "PowerShell 7",
+	"terminal.integrated.profiles.windows": {
+		"PowerShell 7": {
+			"path": "C:/Program Files/PowerShell/7/pwsh.exe"
+		},
+		"Command Prompt": {
+			"path": "C:/Windows/System32/cmd.exe"
+		},
+		"Git Bash": {
+			"path": "C:/Program Files/Git/bin/bash.exe"
+		}
+	},
+	"workbench.colorTheme": "GitHub Dark Default",
+	"git.confirmSync": false,
+	"redhat.telemetry.enabled": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.formatOnSave": true,
+	"git.autofetch": true,
+	"makefile.configureOnOpen": true,
+	"editor.fontFamily": "CaskaydiaCove Nerd Font, Cascadia Mono, DejaVu Sans Mono, monospace",
+	"terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font Mono, Cascadia Mono, DejaVu Sans Mono, monospace",
+	"terminal.integrated.fontLigatures.enabled": true,
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python",
+		"editor.formatOnSave": true
+	},
+	"python.linting.enabled": true,
+	"python.linting.pylintEnabled": true,
+	"python.formatting.provider": "black",
+	"[shellscript]": {
+		"editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
+		"editor.formatOnSave": true
+	},
+	"shellcheck.enable": true,
+	"shfmt.args": ["-i", "0", "-ci"],
+	"[rust]": {
+		"editor.defaultFormatter": "rust-lang.rust-analyzer",
+		"editor.formatOnSave": true
+	},
+	"eslint.enable": true,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+	"[lua]": {
+		"editor.defaultFormatter": "sumneko.lua",
+		"editor.formatOnSave": true
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"lldb.suppressUpdateNotifications": true,
+	"chat.tools.urls.autoApprove": {
+		"https://code.visualstudio.com": true,
+		"https://github.com/microsoft/vscode/wiki/*": true,
+		"https://crates.io": {
+			"approveRequest": true,
+			"approveResponse": false
+		}
+	},
+	"gitlens.ai.model": "vscode",
+	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
+	"better-comments.highlightPlainText": false,
+	"better-comments.tags": [
+		{
+			"tag": "!",
+			"color": "#FF2D00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "?",
+			"color": "#3498DB",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "//",
+			"color": "#474747",
+			"strikethrough": true,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "todo",
+			"color": "#FF8C00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "*",
+			"color": "#98C379",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		}
+	],
+	"remote.defaultExtensionsIfInstalledLocally": [
+		"GitHub.copilot",
+		"GitHub.copilot-chat",
+		"GitHub.vscode-pull-request-github"
+	],
+	"remote.WSL.useShellEnvironment": false,
+	"remote.WSL.downloadInBackground": false,
+	"dev.containers.forwardWSLServices": false,
+	"dev.containers.executeInWSL": false,
+	"remote.containers.executeInWSL": false,
+	"editor.renderWhitespace": "all",
+	"extensions.ignoreRecommendations": true,
+	"chat.viewSessions.orientation": "stacked",
+	"[ignore]": {
+		"editor.defaultFormatter": "lumirelle.shell-format-rev"
+	},
+	"cSpell.userWords": [
+		"allowerasing",
+		"appimage",
+		"appimages",
+		"assumeyes",
+		"autofetch",
+		"bashdb",
+		"blesh",
+		"brpm",
+		"cand",
+		"cargo",
+		"Cascadia",
+		"Caskaydia",
+		"Catppuccin",
+		"celestia",
+		"checkbashrc",
+		"clamav",
+		"clamd",
+		"Consolas",
+		"cpanminus",
+		"cuda",
+		"deepclean",
+		"direnv",
+		"dnf",
+		"dotenv",
+		"envrc",
+		"esbenp",
+		"fastapi",
+		"flatpaks",
+		"fname",
+		"fontconfig",
+		"freshclam",
+		"fwupdmgr",
+		"fzf",
+		"fzf-git",
+		"fzf-git.sh",
+		"gpgcheck",
+		"gsub",
+		"huggingface",
+		"langservers",
+		"libxkbfile",
+		"lmstudio",
+		"lname",
+		"lnav",
+		"luan",
+		"luarocks",
+		"lumirelle",
+		"Mlocal",
+		"msty",
+		"neohtop",
+		"nevra",
+		"NEVRAS",
+		"noarch",
+		"noconfirm",
+		"noprofile",
+		"norc",
+		"npm",
+		"nvitop",
+		"ollama",
+		"openweb",
+		"openwebui",
+		"ostree",
+		"pip",
+		"pipefail",
+		"PKGS",
+		"podman",
+		"procps",
+		"py3nvml",
+		"pylint",
+		"pynvim",
+		"PyYAML",
+		"qmplay",
+		"reponame",
+		"repoquery",
+		"rpm",
+		"rpms",
+		"rustup",
+		"setuptools",
+		"shellcheck",
+		"shfmt",
+		"silverblue",
+		"stellarium",
+		"subfolders",
+		"sumneko",
+		"sysusers",
+		"Tdarr",
+		"texi",
+		"tgpt",
+		"thefuck",
+		"tmpfiles",
+		"toolbox",
+		"Toolchest",
+		"torbrowser",
+		"triggerin",
+		"unicorn",
+		"VENV",
+		"webui",
+		"whatprovides",
+		"x86_64",
+		"yazi"
+	],
+	"task.allowAutomaticTasks": "on"
+}

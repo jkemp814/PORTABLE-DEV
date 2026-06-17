@@ -24,6 +24,16 @@ echo "[DEBUG] Extraction complete."
 mkdir -p "$PROJECTS_DIR"
 mkdir -p "$VSCODE_DATA"
 
+# Copy seed User configs (settings, keybindings, extensions list)
+SEED_USER_DIR="$ROOT_DIR/Toolchest/VSCode/User"
+TARGET_USER_DIR="$VSCODE_DIR/data/user-data/User"
+if [[ -d "$SEED_USER_DIR" ]]; then
+  mkdir -p "$TARGET_USER_DIR"
+  cp "$SEED_USER_DIR"/*.json "$TARGET_USER_DIR/" 2>/dev/null || true
+  cp "$SEED_USER_DIR"/*.txt "$TARGET_USER_DIR/" 2>/dev/null || true
+  echo "[DEBUG] User configs seeded from Toolchest/VSCode/User"
+fi
+
 rm "$VSCODE_TAR"
 echo "[DEBUG] Removing downloaded archive: $VSCODE_TAR"
 

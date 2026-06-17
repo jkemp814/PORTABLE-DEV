@@ -1,0 +1,12 @@
+[
+	{
+		"key": "ctrl+alt+u",
+		"command": "cSpell.addWordToUserSettings",
+		"when": "editorTextFocus || view == cSpellIssuesViewByIssue || view == cSpellIssuesViewByFile"
+	},
+	{
+		"key": "ctrl+alt+i",
+		"command": "cSpell.addIgnoreWordsToUser",
+		"when": "editorTextFocus || view == cSpellIssuesViewByIssue || view == cSpellIssuesViewByFile"
+	}
+]
