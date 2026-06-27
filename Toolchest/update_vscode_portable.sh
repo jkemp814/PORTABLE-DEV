@@ -13,14 +13,14 @@ update_linux() {
   tmpdir="$(mktemp -d)"
 
   info "Downloading VS Code Portable for Linux..."
-  curl -fsSL "https://update.code.visualstudio.com/latest/linux-x64/stable" -o "$tmpdir/vscode.tar.gz"
+  curl -fsSL "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64" -o "$tmpdir/vscode.tar.gz"
 
   info "Extracting..."
   tar -xzf "$tmpdir/vscode.tar.gz" -C "$tmpdir"
 
-  # The archive extracts to a dir like VSCode-linux-x64/
+  # Find the single top-level dir the archive extracts to
   local extracted
-  extracted="$(find "$tmpdir" -maxdepth 1 -type d -name "VSCode-*" | head -1)"
+  extracted="$(find "$tmpdir" -mindepth 1 -maxdepth 1 -type d | head -1)"
 
   if [[ ! -d "$extracted" ]]; then
     error "Could not find extracted VS Code directory"
@@ -56,14 +56,14 @@ update_windows() {
   tmpdir="$(mktemp -d)"
 
   info "Downloading VS Code Portable for Windows..."
-  curl -fsSL "https://update.code.visualstudio.com/latest/win32-x64-zip/stable" -o "$tmpdir/vscode.zip"
+  curl -fsSL "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive" -o "$tmpdir/vscode.zip"
 
   info "Extracting..."
   unzip -q "$tmpdir/vscode.zip" -d "$tmpdir"
 
-  # The archive extracts to a dir like vscode-win32-x64-zip/
+  # Find the single top-level dir the zip extracts to (varies by release)
   local extracted
-  extracted="$(find "$tmpdir" -maxdepth 1 -type d -name "vscode-*" | head -1)"
+  extracted="$(find "$tmpdir" -mindepth 1 -maxdepth 1 -type d | head -1)"
 
   if [[ ! -d "$extracted" ]]; then
     error "Could not find extracted VS Code directory"
