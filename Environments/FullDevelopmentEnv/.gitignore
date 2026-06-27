@@ -1,0 +1,75 @@
+# Ignore Python virtual environments and caches
+**/.venv/
+**/__pycache__/
+**/.mypy_cache/
+**/.pytest_cache/
+
+# macOS system files
+**/.DS_Store
+
+# Node.js dependencies
+**/node_modules/
+
+# Environment and secrets
+**/.env
+
+# VS Code workspace settings
+.vscode/
+
+# Ignore Docker build output and workspace folders
+workspace/
+
+# Ignore project-specific generated files
+projects/*/node_modules/
+projects/*/.venv/
+projects/*/__pycache__/
+
+# Ignore log files
+*.log
+
+# Ignore compiled binaries
+*.o
+*.so
+*.exe
+*.dll
+*.pyc
+*.pyo
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+
+# Environments subdirectories each have their own .gitignore
+
+# Ignore VS Code Portable Linux
+VSCodePortable-Linux/
+VSCodePortable-Windows/
+Toolchest/Fonts/
+Temp/
+coverage.xml
+
+# Ignore temporary files
+*.swp
+*.swo
+*~
+
+# Ignore backup files
+*.bak
+*.tmp
+
+# Ignore system files
+.uuid
+Thumbs.db
+.Trash-1000
+Desktop.ini
+.goutputstream-*
+System Volume Information
+
+# Ignore PortableApps
+PortableApps
+PortableGit
+
+# Ignore PortablePodman runtime contents and static binaries
+PortablePodman/storage/*
+PortablePodman/bin/*
+!PortablePodman/storage/.gitkeep

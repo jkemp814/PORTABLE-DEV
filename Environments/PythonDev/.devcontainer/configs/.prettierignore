@@ -1,0 +1,5 @@
+Makefile
+*.conf
+*.mk
+*.yml
+*.yaml

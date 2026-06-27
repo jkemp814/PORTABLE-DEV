@@ -1,0 +1,8 @@
+{
+	"MD013": false, // Disable line length rule
+	"MD034": true, // Enforce link text (no bare URLs)
+	"MD060": false, // Disable table column style (noisy with wide content)
+	"MD007": {
+		"indent": 4
+	}
+}
