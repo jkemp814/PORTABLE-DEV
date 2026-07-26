@@ -73,3 +73,6 @@ PortableGit
 PortablePodman/storage/*
 PortablePodman/bin/*
 !PortablePodman/storage/.gitkeep
+
+# Embedded repos (synced independently)
+Projects/Scripts/

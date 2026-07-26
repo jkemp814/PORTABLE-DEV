@@ -33,11 +33,11 @@
 PORTABLE-DEV/
 ├── Documents/                   # Personal documents
 ├── Environments/                # Dev env configurations per language
-│   ├── BashDev/
-│   ├── CppDev/
-│   ├── PythonDev/
-│   ├── RustDev/
-│   └── FullDevelopmentEnv/
+│   ├── BashDev/                 # Bash devcontainer (built out)
+│   ├── CppDev/                  # Placeholder — C++ devcontainer config
+│   ├── PythonDev/               # Placeholder — Python devcontainer config
+│   ├── RustDev/                 # Placeholder — Rust devcontainer config
+│   └── FullDevelopmentEnv/      # Placeholder — full-stack devcontainer config
 ├── PortableApps/                # Standalone portable applications
 │   ├── FirefoxPortable/
 │   ├── KeePassXCPortable/
@@ -51,12 +51,12 @@ PORTABLE-DEV/
 │   ├── config/                  # Auto-managed storage paths
 │   └── storage/                 # Container layers trapped on the drive
 ├── Projects/                    # All code repositories and projects
-│   ├── BashDev/
-│   ├── CppDev/
-│   ├── PythonDev/
-│   ├── RustDev/
-│   └── FullDevelopmentEnv/
-├── Scripts/                     # Shared helper scripts (binds to /Scripts)
+│   ├── Scripts/                 # Personal automation & scripts repo
+│   ├── CppDev/                  # Placeholder — add C++ projects here
+│   ├── PythonDev/               # Placeholder — add Python projects here
+│   ├── RustDev/                 # Placeholder — add Rust projects here
+│   └── FullDevelopmentEnv/      # Placeholder — add full-stack projects here
+├── Scripts/                     # Mounted into devcontainers at /Scripts
 ├── Temp/                        # Temporary build artifacts
 ├── Toolchest/                   # Setup utilities, configs, fonts
 │   ├── Configs/
