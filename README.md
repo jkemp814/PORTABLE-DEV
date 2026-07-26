@@ -51,6 +51,7 @@ PORTABLE-DEV/
 │   ├── config/                  # Auto-managed storage paths
 │   └── storage/                 # Container layers trapped on the drive
 ├── Projects/                    # All code repositories and projects
+│   ├── BashDev/                 # Placeholder — add Bash projects here
 │   ├── Scripts/                 # Personal automation & scripts repo
 │   ├── CppDev/                  # Placeholder — add C++ projects here
 │   ├── PythonDev/               # Placeholder — add Python projects here
