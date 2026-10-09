@@ -58,19 +58,12 @@ update_windows() {
   info "Downloading VS Code Portable for Windows..."
   curl -fsSL "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive" -o "$tmpdir/vscode.zip"
 
-  info "Extracting..."
-  unzip -q "$tmpdir/vscode.zip" -d "$tmpdir"
+  # The win32-x64 archive ships its own top-level layout
+  # (Code.exe + a build-hash payload dir + bin/ tools/ policies/ appx/),
+  # so it must be extracted straight into the install dir. Unlike the Linux
+  # tarball there is no single wrapper directory to descend into.
 
-  # Find the single top-level dir the zip extracts to (varies by release)
-  local extracted
-  extracted="$(find "$tmpdir" -mindepth 1 -maxdepth 1 -type d | head -1)"
-
-  if [[ ! -d "$extracted" ]]; then
-    error "Could not find extracted VS Code directory"
-    rm -rf "$tmpdir"
-    return 1
-  fi
-
+  # Back up data/ before replacing
   if [[ -d "$vscode_dir/data" ]]; then
     info "Backing up data/..."
     cp -a "$vscode_dir/data" "$tmpdir/data-backup"
@@ -78,8 +71,9 @@ update_windows() {
 
   info "Replacing program files..."
   rm -rf "${vscode_dir:?}/"*
-  cp -a "$extracted"/* "$vscode_dir/"
+  unzip -oq "$tmpdir/vscode.zip" -d "$vscode_dir"
 
+  # Restore data/
   if [[ -d "$tmpdir/data-backup" ]]; then
     info "Restoring data/ (settings, extensions)..."
     rm -rf "$vscode_dir/data"
@@ -91,6 +85,9 @@ update_windows() {
   code_exe="$(find "$vscode_dir" -name "Code.exe" -type f | head -1)"
   if [[ -n "$code_exe" ]]; then
     info "VS Code Portable (Windows) updated."
+  else
+    error "Code.exe not found after update — Windows install is incomplete"
+    return 1
   fi
 }
 
@@ -98,16 +95,16 @@ info() { printf "\033[1;34m[INFO]\033[0m %s\n" "$*"; }
 error() { printf "\033[1;31m[ERROR]\033[0m %s\n" "$*" >&2; }
 
 case "${1:-both}" in
-linux) update_linux ;;
-windows) update_windows ;;
-both)
-  update_linux
-  update_windows
-  ;;
-*)
-  echo "Usage: $0 [linux|windows|both]"
-  exit 1
-  ;;
+  linux) update_linux ;;
+  windows) update_windows ;;
+  both)
+    update_linux
+    update_windows
+    ;;
+  *)
+    echo "Usage: $0 [linux|windows|both]"
+    exit 1
+    ;;
 esac
 
 info "Update complete. Your settings and extensions are preserved."
