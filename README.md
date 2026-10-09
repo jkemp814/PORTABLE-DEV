@@ -119,7 +119,7 @@ Use the configs in `Environments/` and keep your repos in `Projects/`.
 #### Windows (BYO)
 
 ```powershell
-VSCodePortable-Windows/bin/Code.exe PORTABLE-DEV.code-workspace
+VSCodePortable-Windows/Code.exe PORTABLE-DEV.code-workspace
 ```
 
 Use `PortableGit` for version control.

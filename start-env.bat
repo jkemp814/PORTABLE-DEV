@@ -41,9 +41,9 @@ if exist "%PORTABLE_PODMAN%\bin\podman.exe" (
 )
 
 :: Launch VS Code Portable
-if exist "%VSCODE_DIR%\bin\Code.exe" (
+if exist "%VSCODE_DIR%\Code.exe" (
     echo [INFO] Launching VS Code Portable...
-    start "" "%VSCODE_DIR%\bin\Code.exe" "%WORKSPACE%"
+    start "" "%VSCODE_DIR%\Code.exe" "%WORKSPACE%"
 ) else (
     echo [ERROR] VS Code Portable not found at %VSCODE_DIR%
     echo [INFO] Run Toolchest\setup_vscode_portable_windows.bat to download it.
